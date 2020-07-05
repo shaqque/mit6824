@@ -79,7 +79,7 @@ func checkSameConfig(t *testing.T, c1 Config, c2 Config) {
 
 func TestBasic(t *testing.T) {
 	const nservers = 3
-	cfg := make_config(t, nservers, false)
+	cfg := makeConfig(t, nservers, false)
 	defer cfg.cleanup()
 
 	ck := cfg.makeClient(cfg.All())
@@ -251,7 +251,7 @@ func TestBasic(t *testing.T) {
 
 func TestMulti(t *testing.T) {
 	const nservers = 3
-	cfg := make_config(t, nservers, false)
+	cfg := makeConfig(t, nservers, false)
 	defer cfg.cleanup()
 
 	ck := cfg.makeClient(cfg.All())

@@ -48,7 +48,7 @@ func nparallel(phase string) int {
 			err := syscall.Kill(xpid, 0)
 			if err == nil {
 				// if err == nil, xpid is alive.
-				ret += 1
+				ret++
 			}
 		}
 	}

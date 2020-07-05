@@ -12,6 +12,7 @@ import (
 	"6.824/labrpc"
 )
 
+// Clerk represents a clerk.
 type Clerk struct {
 	servers []*labrpc.ClientEnd
 	// Your data here.
@@ -24,6 +25,7 @@ func nrand() int64 {
 	return x
 }
 
+// MakeClerk returns a new clerk.
 func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	ck := new(Clerk)
 	ck.servers = servers
@@ -31,6 +33,7 @@ func MakeClerk(servers []*labrpc.ClientEnd) *Clerk {
 	return ck
 }
 
+// Query func.
 func (ck *Clerk) Query(num int) Config {
 	args := &QueryArgs{}
 	// Your code here.
@@ -48,6 +51,7 @@ func (ck *Clerk) Query(num int) Config {
 	}
 }
 
+// Join func.
 func (ck *Clerk) Join(servers map[int][]string) {
 	args := &JoinArgs{}
 	// Your code here.
@@ -66,6 +70,7 @@ func (ck *Clerk) Join(servers map[int][]string) {
 	}
 }
 
+// Leave func.
 func (ck *Clerk) Leave(gids []int) {
 	args := &LeaveArgs{}
 	// Your code here.
@@ -84,6 +89,7 @@ func (ck *Clerk) Leave(gids []int) {
 	}
 }
 
+// Move func.
 func (ck *Clerk) Move(shard int, gid int) {
 	args := &MoveArgs{}
 	// Your code here.
